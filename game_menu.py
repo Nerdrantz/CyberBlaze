@@ -4,11 +4,13 @@ import os
 from inventory import display_inventory
 from sell_items import sell_item, show_sellable_items
 
+# Center the user input in the terminal.
 def center_input(prompt):
     # Get the user input
     user_input = input(center_text(prompt))
     return user_input
     
+# function for centering text   
 def center_text(text):
     # Split the text into lines
     lines = text.split('\n')
@@ -26,7 +28,8 @@ def center_text(text):
     
     # Return the joined centered lines
     return '\n'.join(centered_lines)
-    
+
+# function for clearing the screen    
 def clear_screen():
     # Check if the operating system is Windows or not
     if os.name == 'nt':
@@ -34,10 +37,13 @@ def clear_screen():
     else:
         os.system('clear')  # For Linux/Mac
 
-
+# Main menu in game after leaving the original main menu.
 def game_menu():
     
+    # Get the list of ships in the ship list.
     from ships_list import show_buyable_ships, buy_ship, send_ship_on_expedition
+    
+    #Menu options
     menu_options = [
         "\nSelect an option:",
         "1. Buy a ship",

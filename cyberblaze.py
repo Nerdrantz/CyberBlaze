@@ -8,15 +8,15 @@ from game_logic import start_game_logic
 # Wait for seconds to start the game
 time.sleep(2)
 
-# functions for clearing the screen and centering text
-
+# function for clearing the screen
 def clear_screen():
     # Check if the operating system is Windows or not
     if os.name == 'nt':
         os.system('cls')  # For Windows
     else:
         os.system('clear')  # For Linux/Mac
-
+        
+# function for centering text
 def center_text(text):
     # Split the text into lines
     lines = text.split('\n')
@@ -35,11 +35,13 @@ def center_text(text):
     # Return the joined centered lines
     return '\n'.join(centered_lines)
 
+# Center the user input in the terminal.
 def center_input(prompt):
     # Get the user input
     user_input = input(center_text(prompt))
     return user_input
 
+# How to play description
 def show_how_to_play():
     clear_screen()
     # Display instructions on how to play
@@ -62,7 +64,8 @@ def show_how_to_play():
     print(center_text(instructions))
     input("Press any key to return to the menu...")
     show_menu()
-    
+ 
+# Main menu 
 def show_menu():
     clear_screen()
     title = r"""

@@ -2,6 +2,7 @@
 
 import random
 
+# Loot types and value of loot
 loot_types = [
     {"name": "Gold", "value": 20},
     {"name": "Platinum", "value": 30},
