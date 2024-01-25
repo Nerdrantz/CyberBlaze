@@ -22,10 +22,11 @@ On Windows, run cyberblaze.py in your terminal. On Linux, run Python3 cyberblaze
 
 
 **Future additions:**
-1. Make ships take damange from random events.
-2. Make ships selectable in inventory so you can get a list of stats, make repairs, make upgrades.
-3. Add a system for creating new items or upgrades from loot found on expeditions.
-4. More random events.
-5. Add a saving and loading system.
-6. Saving and loading system. Ability to save your game so you can continue playing, either using xml or json format.
-7. Modding????
+[] Make ships take damange from random events.
+[] Make ships selectable in inventory so you can get a list of stats, make repairs, make upgrades.
+[] Add a system for creating new items or upgrades from loot found on expeditions.
+[] More random events.
+[] Add a saving and loading system.
+[] Saving and loading system. Ability to save your game so you can continue playing, either using xml or json format.
+[] Modding????
+[] More loot items
