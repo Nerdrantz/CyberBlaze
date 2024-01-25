@@ -1,4 +1,10 @@
-# CyberBlaze
+# _________        ___.               __________.__                        
+    \_   ___ \___.__.\_ |__   __________\______   \  | _____  ________ ____  
+    /    \  \<   |  | | __ \_/ __ \_  __ \    |  _/  | \__  \ \___   // __ \ 
+    \     \___\___  | | \_\ \  ___/|  | \/    |   \  |__/ __ \_/    /\  ___/ 
+     \______  / ____| |___  /\___  >__|  |______  /____(____  /_____ \\___  >
+            \/\/          \/     \/             \/          \/      \/    \/  
+            
 CyberBlaze is a space simulator meant to run fully in the terminal
 
 The project is fully open source and any additions welcomed!
