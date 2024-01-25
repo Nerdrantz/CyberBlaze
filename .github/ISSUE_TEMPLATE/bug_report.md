@@ -12,10 +12,9 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. The game has no built in bug report system
+2. To report a bug, go to the git repo and post an issue report.
+3. Give as much information as you can.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
