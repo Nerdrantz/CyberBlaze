@@ -1,7 +1,5 @@
 import time
-import os
 import random  # Import the random module
-import sys
 
 from inventory import subtract_credits, player_credits, add_ship_to_fleet, player_fleet, update_inventory
 from loot_types import get_random_loot
@@ -13,12 +11,6 @@ buyable_ships_list = [
     {"name": "Cosmic Explorer", "cost": 200, "Stats": "Heavy and tanky armor"},
     # Add more ships as needed
 ]
-
-def clear_screen():
-    if os.name == 'nt':
-        os.system('cls')  # For Windows
-    else:
-        os.system('clear')  # For Linux/Mac
 
 def show_buyable_ships():
     print("Available Ships:")

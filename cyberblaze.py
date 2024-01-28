@@ -1,46 +1,15 @@
 # cyberblaze.py
 
-import os
 import time
 import sys
+
 from game_logic import start_game_logic
+from term_utils import clear_screen, center_text, center_input
 
 # Wait for seconds to start the game
 time.sleep(2)
 
-# function for clearing the screen
-def clear_screen():
-    # Check if the operating system is Windows or not
-    if os.name == 'nt':
-        os.system('cls')  # For Windows
-    else:
-        os.system('clear')  # For Linux/Mac
         
-# function for centering text
-def center_text(text):
-    # Split the text into lines
-    lines = text.split('\n')
-    
-    # Calculate the width of the terminal
-    terminal_width = os.get_terminal_size().columns
-    
-    # Create a list to store centered lines
-    centered_lines = []
-    
-    for line in lines:
-        # Calculate the number of spaces needed to center each line
-        padding = (terminal_width - len(line)) // 2
-        centered_lines.append(" " * padding + line)
-    
-    # Return the joined centered lines
-    return '\n'.join(centered_lines)
-
-# Center the user input in the terminal.
-def center_input(prompt):
-    # Get the user input
-    user_input = input(center_text(prompt))
-    return user_input
-
 # How to play description
 def show_how_to_play():
     clear_screen()
