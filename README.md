@@ -26,7 +26,9 @@ On Windows, run cyberblaze.py in your terminal. On Linux, run Python3 cyberblaze
 - [ ] Make ships selectable in inventory so you can get a list of stats, make repairs, make upgrades.
 - [ ] Add a system for creating new items or upgrades from loot found on expeditions.
 - [ ] More random events.
+- [ ] Trade hubs instead of just "selling" loot randomly
 - [ ] Add a saving and loading system.
 - [ ] Saving and loading system. Ability to save your game so you can continue playing, either using xml or json format.
 - [ ] Modding????
 - [ ] More loot items
+- [ ] Gui interface??
