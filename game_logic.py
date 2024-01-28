@@ -7,7 +7,7 @@ from game_menu import start_game
 from term_utils import clear_screen, center_text
 
 
-game_starting = "Game is starting...\nCalculating thrust vectors..."
+game_starting = "Game is starting...\nCalculating thrust vectors...\nInitiating spacecraft systems...\nVerifying life support systems...\nEstablishing connection with galactic databases..."
 
 
 def load_save():
@@ -16,7 +16,7 @@ def load_save():
 
 def default_data():
     try:
-        player_name = input("Enter your name: ")
+        player_name = input(center_text("Enter your name: "))
     except KeyboardInterrupt:
         sys.exit(0)
     return {

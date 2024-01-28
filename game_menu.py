@@ -6,7 +6,7 @@ from term_utils import center_text, center_input
 
 # Menu options
 menu_options = [
-    "Select an option:",
+    "\nSelect an option:",
     "1. Buy a ship",
     "2. Send ship on expedition",
     "3. Inventory",

@@ -34,7 +34,7 @@ def show_how_to_play():
     """
         )
     )
-    input("Press any key to return to the menu...")
+    input(center_text("Press any key to return to the menu..."))
 
 
 # Main menu
