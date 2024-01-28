@@ -2,7 +2,7 @@
 
 from inventory import Inventory
 from ships_list import show_buyable_ships, buy_ship, send_ship_on_expedition
-from term_utils import center_text, center_input
+from term_utils import center_text, center_input, input_number
 
 # Menu options
 menu_options = [
@@ -26,11 +26,8 @@ def start_game(game_data):
         match center_input("\nEnter a number: "):
             case "1":
                 show_buyable_ships()
-                try:
-                    buy_choice = int(center_input("\nEnter the number of the ship you want to buy: "))
-                except ValueError:
-                    print("Invalid input. Please enter a number.")
-                else:
+                buy_choice = input_number("\nEnter the number of the ship you want to buy: ")
+                if buy_choice is not None:
                     buy_ship(buy_choice, inventory)
             case "2":
                 send_ship_on_expedition(inventory)
@@ -38,11 +35,8 @@ def start_game(game_data):
                 inventory.display_inventory()
             case "4":
                 inventory.show_sellable_items()
-                try:
-                    sell_choice = int(center_input("\nEnter the number of the item you want to sell: "))
-                except ValueError:
-                    print("Invalid input. Please enter a number")
-                else:
+                sell_choice = input_number("\nEnter the number of the item you want to sell: ")
+                if sell_choice is not None:
                     inventory.sell_item(sell_choice)
             case "5":
                 break

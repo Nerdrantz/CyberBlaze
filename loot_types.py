@@ -1,14 +1,8 @@
 # loot_types.py
 
-from dataclasses import dataclass
-
 import random
 
-
-@dataclass
-class Loot:
-    name: str
-    value: int
+from models import Loot
 
 
 # Loot types and value of loot
