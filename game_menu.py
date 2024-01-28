@@ -1,78 +1,50 @@
 # game_menu.py
 
-import os
-from inventory import display_inventory
-from sell_items import sell_item, show_sellable_items
+from inventory import Inventory
+from ships_list import show_buyable_ships, buy_ship, send_ship_on_expedition
+from term_utils import center_text, center_input
 
-# Center the user input in the terminal.
-def center_input(prompt):
-    # Get the user input
-    user_input = input(center_text(prompt))
-    return user_input
-    
-# function for centering text   
-def center_text(text):
-    # Split the text into lines
-    lines = text.split('\n')
-    
-    # Calculate the width of the terminal
-    terminal_width = os.get_terminal_size().columns
-    
-    # Create a list to store centered lines
-    centered_lines = []
-    
-    for line in lines:
-        # Calculate the number of spaces needed to center each line
-        padding = (terminal_width - len(line)) // 2
-        centered_lines.append(" " * padding + line)
-    
-    # Return the joined centered lines
-    return '\n'.join(centered_lines)
+# Menu options
+menu_options = [
+    "Select an option:",
+    "1. Buy a ship",
+    "2. Send ship on expedition",
+    "3. Inventory",
+    "4. Sell items",
+    "5. Main menu",
+]
 
-# function for clearing the screen    
-def clear_screen():
-    # Check if the operating system is Windows or not
-    if os.name == 'nt':
-        os.system('cls')  # For Windows
-    else:
-        os.system('clear')  # For Linux/Mac
 
 # Main menu in game after leaving the original main menu.
-def game_menu():
-    
-    # Get the list of ships in the ship list.
-    from ships_list import show_buyable_ships, buy_ship, send_ship_on_expedition
-    
-    #Menu options
-    menu_options = [
-        "\nSelect an option:",
-        "1. Buy a ship",
-        "2. Send ship on expedition"
-        "\n3. Inventory"
-        "\n4. Sell items"
-    ]
-    
-    for option in menu_options:
-        print(center_text(option))
+def start_game(game_data):
+    inventory = Inventory(**game_data)
 
-    choice = center_input("\nEnter a number: ")
+    while 1:
+        for option in menu_options:
+            print(center_text(option))
 
-    if choice == "1":
-        show_buyable_ships()
-        buy_choice = center_input("\nEnter the number of the ship you want to buy: ")
-        buy_ship(buy_choice)
-        game_menu()
-    elif choice == "2":
-        send_ship_on_expedition()
-        game_menu()
-    elif choice == "3":
-        display_inventory()
-        game_menu()
-    elif choice == "4":
-        show_sellable_items()
-        sell_choice = center_input("\nEnter the number of the item you want to sell: ")
-        sell_item(sell_choice)
-        game_menu()
-    else:
-        print("Invalid choice. Please enter 1 or 2 or 3.")
-        game_menu()
+        match center_input("\nEnter a number: "):
+            case "1":
+                show_buyable_ships()
+                try:
+                    buy_choice = int(center_input("\nEnter the number of the ship you want to buy: "))
+                except ValueError:
+                    print("Invalid input. Please enter a number.")
+                else:
+                    buy_ship(buy_choice, inventory)
+            case "2":
+                send_ship_on_expedition(inventory)
+            case "3":
+                inventory.display_inventory()
+            case "4":
+                inventory.show_sellable_items()
+                try:
+                    sell_choice = int(center_input("\nEnter the number of the item you want to sell: "))
+                except ValueError:
+                    print("Invalid input. Please enter a number")
+                else:
+                    inventory.sell_item(sell_choice)
+            case "5":
+                break
+            case _:
+                print("Invalid choice. Please enter 1 or 2 or 3.")

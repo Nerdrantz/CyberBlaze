@@ -1,30 +1,45 @@
 # loot_types.py
 
+from dataclasses import dataclass
+
 import random
+
+
+@dataclass
+class Loot:
+    name: str
+    value: int
+
 
 # Loot types and value of loot
 loot_types = [
-    {"name": "Gold", "value": 20},
-    {"name": "Platinum", "value": 30},
-    {"name": "Diamonds", "value": 50},
-    {"name": "Silver", "value": 15},
-    {"name": "Sapphires", "value": 40},
-    {"name": "Emeralds", "value": 35},
-    {"name": "Ruby", "value": 45},
-    {"name": "Copper", "value": 10},
-    {"name": "Titanium", "value": 60},
-    {"name": "Opals", "value": 25},
-    {"name": "Amethyst", "value": 30},
-    {"name": "Topaz", "value": 25},
-    {"name": "Obsidian", "value": 18},
-    {"name": "Jade", "value": 40},
-    {"name": "Pearls", "value": 35},
-    {"name": "Quartz", "value": 15},
-    {"name": "Ruby", "value": 50},
-    {"name": "Aquamarine", "value": 28},
-    {"name": "Malachite", "value": 22},
-    {"name": "Moonstone", "value": 32}
+    Loot(name, value)
+    for name, value in [
+        ("Gold", 20),
+        ("Platinum", 30),
+        ("Diamonds", 50),
+        ("Silver", 15),
+        ("Sapphires", 40),
+        ("Emeralds", 35),
+        ("Ruby", 45),
+        ("Copper", 10),
+        ("Titanium", 60),
+        ("Opals", 25),
+        ("Amethyst", 30),
+        ("Topaz", 25),
+        ("Obsidian", 18),
+        ("Jade", 40),
+        ("Pearls", 35),
+        ("Quartz", 15),
+        ("Ruby", 50),
+        ("Aquamarine", 28),
+        ("Malachite", 22),
+        ("Moonstone", 32),
+    ]
 ]
+
+loot_types_dict = {loot.name: loot for loot in loot_types}
+
 
 def get_random_loot():
     return random.choice(loot_types)

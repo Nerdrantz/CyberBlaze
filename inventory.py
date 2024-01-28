@@ -1,40 +1,51 @@
 # inventory.py
 
-initial_credits = 100
-player_credits = initial_credits
-player_fleet = []
-player_inventory = []
-   
-def display_inventory():
-    inventory_str = ", ".join([f"{item['name']}: {item['amount']}" for item in player_inventory])
-    print(f"Inventory: {inventory_str}")
-    print(f"Credits: {player_credits}")
-    print(f"Fleet: {', '.join(player_fleet)}")
-    
-def add_credits(amount):
-    global player_credits
-    player_credits += amount
+from typing import Dict, List
 
-def subtract_credits(amount):
-    global player_credits
-    print("Player_Credits: " + str(player_credits))
-    if player_credits >= amount:
-        player_credits -= amount
-    else:
-        print("Insufficient credits.")
-        
-def add_ship_to_fleet(ship_name):
-    player_fleet.append(ship_name)
-    print("Updated fleet:", player_fleet)
-    
-def update_inventory(loot_type, loot_amount):
-    global player_credits
-    found = False
-    for item in player_inventory:
-        if item['name'] == loot_type:
-            item['amount'] += loot_amount
-            found = True
-            break
-            
-    if not found:
-        player_inventory.append({"name": loot_type, "amount": loot_amount})
+from loot_types import loot_types_dict
+
+
+class Inventory:
+    def __init__(self, player_credits, player_fleet, player_inventory) -> None:
+        self.credits: int = max(player_credits, 0)
+        self.fleet: List[str] = player_fleet or list()
+        self.inventory: Dict[str, int] = player_inventory or dict()
+
+    def display_inventory(self):
+        print(
+            f"Inventory: {', '.join(f'{name}: {amount}' for name, amount in self.inventory.items())}\n"
+            f"Credits: {self.credits}\n"
+            f"Fleet: {', '.join(self.fleet)}\n"
+        )
+
+    def add_credits(self, amount):
+        self.credits += amount
+
+    def subtract_credits(self, amount):
+        self.credits = max(0, self.credits - amount)
+
+    def add_ship_to_fleet(self, ship_name):
+        self.fleet.append(ship_name)
+        print(f"Updated fleet: {', '.join(self.fleet)}")
+
+    def update_inventory(self, loot_type, loot_amount):
+        self.inventory[loot_type] = self.inventory.get(loot_type, 0) + loot_amount
+
+    def show_sellable_items(self):
+        print("Sellable Items: ")
+        for i, (name, quantity) in enumerate(self.inventory.items(), start=1):
+            print(f"{i}, {name} - Quantity: {quantity}")
+
+    def sell_item(self, item_index):
+        if item_index < 1 or item_index > len(self.inventory):
+            print("Invalid item choice. Please enter a valid number.")
+            return
+        name, quantity = list(self.inventory.items())[item_index - 1]
+        loot_type = loot_types_dict.get(name)
+        if not loot_type:
+            print("Invalid item type. Unable to sell.")
+            return
+        sell_value = loot_type.value * quantity
+        self.add_credits(sell_value)  # Update player_credits
+        del self.inventory[name]
+        print(f"You sold {quantity} {name}(s) for {sell_value} credits.")
