@@ -1,0 +1,38 @@
+CyberBlaze Lore:
+
+Written by NerdRantz
+
+
+Notes from the Dev: Thanks for taking time to play my game! If you are reading this, it means you made it far enought
+that you saw the lore file and decided to take some time to read it! I appreciate that. If you decided to read this before play,
+know that CyberBlaze is a space management sim. Hopefully you enjoy it! There is a lot to explore here. 
+
+
+
+Definitions:
+
+	1. CyberBlaze | Name of the Game | The nickname that the ancient natives of the universe gave to the Central Cluster of star systems due to the colors of the giant gas clouds surrounding them.
+	2. Aleran | The ancient inhabitants of CyberBlaze
+	3. Divex | Small sub system in the eastern corner of CyberBlaze. This is where you start out in the game. 
+	4. More to be added.....
+	
+	
+	
+	
+Forward:
+
+In the ancient cosmic chronicles, CyberBlaze emerged as a celestial haven, 
+once cradling a modest yet flourishing interstellar kin. 
+A tapestry of serenity unfurled across the starlit expanse, 
+as denizens of this astral realm coexisted in a delicate dance, 
+their essence woven into the very fabric of celestial constellations. 
+The Aleran, custodians of this ethereal realm, sculpted grandiose mega-structures that graced the cosmos, 
+allowing them to traverse the cosmic sea with an almost otherworldly celerity.
+
+This astral Eden, ensconced in the celestial epochs, stood as a testament to the Aleran's mastery over their cosmic domain. 
+Millennia flowed like an unending river, carrying with it the symphony of harmonious existence. 
+The astral voyagers reveled in the celestial beauty, 
+traversing the cosmic currents with a grace reminiscent of celestial phantoms. 
+Yet, as the eternal dance of time wove its intricate pattern, shadows began to stir, 
+threatening to eclipse the perpetual radiance of this cosmic sanctuary. 
+The tranquil melody of CyberBlaze faced the encroaching dissonance, and the fate of this astral expanse hung in the balance.
