@@ -3,19 +3,21 @@
 from typing import Dict, List
 
 from loot_types import loot_types_dict
-from term_utils import center_text, center_input
+from models import Ship
+from term_utils import center_text
+
 
 class Inventory:
     def __init__(self, player_credits, player_fleet, player_inventory) -> None:
         self.credits: int = max(player_credits, 0)
-        self.fleet: List[str] = player_fleet or list()
+        self.fleet: List[Ship] = player_fleet or list()
         self.inventory: Dict[str, int] = player_inventory or dict()
 
     def display_inventory(self):
         print(center_text(
             f"Inventory: {', '.join(f'{name}: {amount}' for name, amount in self.inventory.items())}\n"
             f"Credits: {self.credits}\n"
-            f"Fleet: {', '.join(self.fleet)}\n"
+            f"Fleet: {', '.join(s.name for s in self.fleet)}\n"
         ))
 
     def add_credits(self, amount):
@@ -24,9 +26,9 @@ class Inventory:
     def subtract_credits(self, amount):
         self.credits = max(0, self.credits - amount)
 
-    def add_ship_to_fleet(self, ship_name):
-        self.fleet.append(ship_name)
-        print(center_text(f"\nUpdated fleet: {', '.join(self.fleet)}"))
+    def add_ship_to_fleet(self, ship: Ship):
+        self.fleet.append(ship)
+        print(center_text(f"\nUpdated fleet: {', '.join(s.name for s in self.fleet)}"))
 
     def update_inventory(self, loot_type, loot_amount):
         self.inventory[loot_type] = self.inventory.get(loot_type, 0) + loot_amount
