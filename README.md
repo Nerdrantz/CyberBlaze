@@ -13,6 +13,7 @@
 To run the game, first make sure you have Python 3.0 or newer installed. 
 Download the files and put them all into the same folder. 
 On Windows, run cyberblaze.py in your terminal. On Linux, run Python3 cyberblaze.py
+For best visuals, I personally use Windows Terminal with a custom theme. 
 
 ![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/b9fb013f-497e-469d-becc-51afef4182a3)
 
