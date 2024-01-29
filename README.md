@@ -4,12 +4,6 @@
 
 ![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/e4bd1f39-5a57-4da1-92ad-7183800185e8)
 
-![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/b9fb013f-497e-469d-becc-51afef4182a3)
-
-![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/cc6828f1-5e35-44b7-9003-9a8dc736381b)
-
-
-
 
 
 
@@ -19,6 +13,10 @@
 To run the game, first make sure you have Python 3.0 or newer installed. 
 Download the files and put them all into the same folder. 
 On Windows, run cyberblaze.py in your terminal. On Linux, run Python3 cyberblaze.py
+
+![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/b9fb013f-497e-469d-becc-51afef4182a3)
+
+![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/cc6828f1-5e35-44b7-9003-9a8dc736381b)
 
 **Current premise and what has been done:**
 1. Start a new game, buy a ship and send it on an expedition.
