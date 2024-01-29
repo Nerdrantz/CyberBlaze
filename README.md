@@ -2,7 +2,8 @@
             
 ## CyberBlaze is a space resource management game meant to run fully in the terminal built with python
 
-![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/286754ba-56e9-488f-9a34-e2923f998854)
+![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/e4bd1f39-5a57-4da1-92ad-7183800185e8)
+
 
 
 
