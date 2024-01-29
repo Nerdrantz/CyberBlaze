@@ -4,7 +4,7 @@ Written by NerdRantz
 
 
 Notes from the Dev: Thanks for taking time to play my game! If you are reading this, it means you made it far enought
-that you saw the lore file and decided to take some time to read it! I appreciate that. If you decided to read this before play,
+that you saw the lore file and decided to take some time to read it! I appreciate that. If you decided to read this before playing,
 know that CyberBlaze is a space management sim. Hopefully you enjoy it! There is a lot to explore here. 
 
 
