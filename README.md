@@ -4,6 +4,12 @@
 
 ![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/e4bd1f39-5a57-4da1-92ad-7183800185e8)
 
+![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/b9fb013f-497e-469d-becc-51afef4182a3)
+
+![image](https://github.com/Nerdrantz/CyberBlaze/assets/66850234/cc6828f1-5e35-44b7-9003-9a8dc736381b)
+
+
+
 
 
 
