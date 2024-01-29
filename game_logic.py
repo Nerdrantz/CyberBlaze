@@ -3,6 +3,7 @@
 import time
 import sys
 
+
 from game_menu import start_game
 from term_utils import clear_screen, center_text
 
@@ -27,7 +28,7 @@ def default_data():
     }
 
 
-def start_game_logic():
+def start_game_logic():    
     clear_screen()
     # Wait for seconds to start the game
     time.sleep(2)
@@ -38,8 +39,12 @@ def start_game_logic():
 
     # Clear the screen and then load the player data
     clear_screen()
+    print(center_text("Welcome Commander! It seems you were hired on to control the next fleet in the Divex System.\n Don't let the spooky bedtime stories of the Aleran get to you, you're going to do just fine.\n First we should get your name so we can astablish who you are...\n"))
     game_data = load_save() or default_data()
 
+    print(center_text("\nAhh that is a fine name. It suits you very well! Alright, lets get going here as we have much to do!"))
+    time.sleep(4)
+    
     # Clear the screen again and then add the players name to the screen
     # and load the menu
     clear_screen()
