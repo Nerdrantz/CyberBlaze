@@ -5,12 +5,27 @@ from inventory import Inventory
 from loot_types import get_random_loot
 from models import Ship
 from term_utils import input_number, center_text
-
+from loading_bar import loading_bar_expeditions
 
 _ships_list = [
     ("Starship Alpha", 100, "Fast and lightweight"),
-    ("Galactic Voyager", 150, "Fast and slow turning speed"),
-    ("Cosmic Explorer", 200, "Heavy and tanky armor"),
+    ("Galactic Voyager", 1500, "Fast and slow turning speed"),
+    ("Cosmic Explorer", 2000, "Heavy and tanky armor"),
+    ("Nebula Striker", 1200, "Agile and stealthy"),
+    ("Quantum Cruiser", 1800, "Versatile with advanced weaponry"),
+    ("Celestial Guardian", 2500, "Massive and heavily armed"),
+    ("Solar Specter", 1300, "High-speed with advanced cloaking"),
+    ("Interstellar Beacon", 1600, "Well-balanced and adaptable"),
+    ("Lunar Sentinel", 1900, "Medium-class with superior shielding"),
+    ("Astro Blazer", 1100, "Speedy and nimble"),
+    ("Orion Battler", 1700, "Sturdy with energy-based weaponry"),
+    ("Stellar Warden", 2200, "Guardian-class with support capabilities"),
+    ("Cosmic Phantom", 1400, "Stealth capabilities and rapid firing"),
+    ("Galaxy Guardian", 2000, "Durable with advanced targeting systems"),
+    ("Nebula Raider", 1500, "Quick strikes with hit-and-run tactics"),
+    ("Astral Enforcer", 2400, "Versatile and well-armored"),
+    ("Supernova Hunter", 11600, "Aggressive with long-range missiles"),
+    ("Solar Serpent", 22100, "Sleek design for rapid interplanetary travel")
     # Add more ships as needed
 ]
 
@@ -79,12 +94,12 @@ def send_ship_on_expedition(inventory: Inventory):
     loot_amount = int(10 * loot_multiplier)
 
     random_loot = get_random_loot()
-
+    
     print(center_text(f"{selected_ship.name} is on an expedition for {expedition_duration} minutes."))
-    for remaining_time in range(expedition_duration, 0, -1):
-        print(center_text(f"Time remaining: {remaining_time} minutes"))
-        time.sleep(60)
-
+    for remaining_time in range(expedition_duration * 60, 0, -1):
+        loading_bar_expeditions(expedition_duration * 60, remaining_time)
+        time.sleep(1)
+        
     ship_event(selected_ship)  # Introduce ship events
     inventory.update_inventory(random_loot.name, loot_amount)
 
@@ -92,3 +107,4 @@ def send_ship_on_expedition(inventory: Inventory):
         f"{selected_ship.name} has returned from the expedition!\n"
         f"Collected loot: {random_loot.name}\n"
     ))
+    

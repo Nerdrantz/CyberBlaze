@@ -7,6 +7,7 @@ import sys
 from game_menu import start_game
 from term_utils import clear_screen, center_text
 from game_data_manager import GameDataManager
+from loading_bar import loading_bar
 
 game_starting = "Game is starting...\nCalculating thrust vectors...\nInitiating spacecraft systems...\nVerifying life support systems...\nEstablishing connection with galactic databases..."
 
@@ -36,7 +37,11 @@ def start_game_logic():
 
     # Add your game logic here
     print(center_text(game_starting))
-    time.sleep(2)
+     # Display the loading bar for a short duration
+    for _ in range(100):  # Adjust the number of iterations as needed
+        time.sleep(0.1)
+        loading_bar(100, _ + 1)  # Assuming a total of 20 steps
+    time.sleep(0)
 
     # Clear the screen and then load the player data
     clear_screen()
@@ -45,7 +50,11 @@ def start_game_logic():
     
     player_name = game_data["player_name"] # Store the players name so it can be saved. 
     print(center_text("\nAhh that is a fine name. It suits you very well! Alright, lets get going here as we have much to do!"))
-    time.sleep(4)
+     # Display the loading bar for a short duration
+    for _ in range(20):  # Adjust the number of iterations as needed
+        time.sleep(0.1)
+        loading_bar(20, _ + 1)  # Assuming a total of 20 steps
+    time.sleep(0)
     
     # Clear the screen again and then add the players name to the screen
     # and load the menu
