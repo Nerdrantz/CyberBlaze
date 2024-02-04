@@ -3,6 +3,7 @@
 import time
 import sys
 
+from game_data_manager import GameDataManager
 from game_logic import start_game_logic
 from term_utils import clear_screen, center_text, center_input
 
@@ -36,6 +37,8 @@ def show_how_to_play():
     )
     input(center_text("Press any key to return to the menu..."))
 
+def load_game():
+    return GameDataManager.load_game_data()
 
 # Main menu
 def show_menu():
@@ -69,7 +72,7 @@ def show_menu():
             case "2":
                 start_game_logic()  # Call the game logic function
             case "3":
-                print("Not usable yet")
+                start_game_logic(load_game())
             case "4":
                 print("Exiting the program. Goodbye!")
                 sys.exit(0)

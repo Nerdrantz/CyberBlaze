@@ -1,5 +1,7 @@
 # game_menu.py
 
+from typing import Any, Dict
+
 from inventory import Inventory
 from ships_list import show_buyable_ships, buy_ship, send_ship_on_expedition
 from term_utils import center_text, center_input, input_number
@@ -16,8 +18,13 @@ menu_options = [
 
 
 # Main menu in game after leaving the original main menu.
-def start_game(game_data):
-    inventory = Inventory(**game_data)
+def start_game(game_data: Dict[str, Any]):
+    inventory_data = {
+        "credits": game_data.get("credits", 0),
+        "fleet": game_data.get("fleet", list()),
+        "inventory": game_data.get("inventory", dict()),
+    }
+    inventory = Inventory(**inventory_data)
 
     while 1:
         for option in menu_options:
@@ -39,6 +46,7 @@ def start_game(game_data):
                 if sell_choice is not None:
                     inventory.sell_item(sell_choice)
             case "5":
+                game_data.update(inventory.as_dict())
                 break
             case _:
                 print("Invalid choice. Please enter 1 or 2 or 3.")

@@ -1,6 +1,6 @@
 # inventory.py
 
-from typing import Dict, List
+from typing import Any, Dict, List
 
 from loot_types import loot_types_dict
 from models import Ship
@@ -8,10 +8,10 @@ from term_utils import center_text
 
 
 class Inventory:
-    def __init__(self, player_credits, player_fleet, player_inventory) -> None:
-        self.credits: int = max(player_credits, 0)
-        self.fleet: List[Ship] = player_fleet or list()
-        self.inventory: Dict[str, int] = player_inventory or dict()
+    def __init__(self, credits: int, fleet: List[Ship], inventory: Dict[str, int]) -> None:
+        self.credits: int = max(credits, 0)
+        self.fleet: List[Ship] = fleet or list()
+        self.inventory: Dict[str, int] = inventory or dict()
 
     def display_inventory(self):
         print(center_text(
@@ -51,3 +51,10 @@ class Inventory:
         self.add_credits(sell_value)  # Update player_credits
         del self.inventory[name]
         print(center_text(f"You sold {quantity} {name}(s) for {sell_value} credits."))
+
+    def as_dict(self) -> Dict[str, Any]:
+        return {
+            "credits": self.credits,
+            "fleet": self.fleet,
+            "inventory": self.inventory,
+        }
