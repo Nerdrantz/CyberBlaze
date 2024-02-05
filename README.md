@@ -34,7 +34,7 @@ For best visuals, I personally use Windows Terminal with a custom theme.
 - [ ] More random events.
 - [ ] Trade hubs instead of just "selling" loot randomly
 - [ ] Add a saving and loading system.
-- [ ] Saving and loading system. Ability to save your game so you can continue playing, either using xml or json format.
+- [x] Saving and loading system. Ability to save your game so you can continue playing, either using xml or json format.
 - [ ] Modding????
 - [ ] More loot items
 - [ ] Gui interface??
